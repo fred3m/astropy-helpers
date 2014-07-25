@@ -530,6 +530,9 @@ def generate_build_ext_command(packagename, release):
                 elif src.endswith('.c'):
                     pyxfn = src[:-2] + '.pyx'
                     cfn = src
+                elif src.endswith('.cpp'):
+                    pyxfn = src[:-4]
+                    cfn = src
 
                 if not os.path.isfile(pyxfn):
                     continue
